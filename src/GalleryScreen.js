@@ -3,8 +3,20 @@ import {Text, View, Button, Image, TouchableOpacity, AppRegistry, StyleSheet, Re
 import PhotoGrid from 'react-native-photo-grid'
 import PTRView from 'react-native-pull-to-refresh'
 
+//Navigation for Picture Slide Show
+import {StackNavigator} from 'react-navigation'
+import ParentScreen from './GalleryScreen'
+import ChildScreen from './PictureSlideShow'
+
+const slideshow = StackNavigator({
+  ParentScreen: {screen: ParentScreen}
+  ChildScreen: {screen: ChildScreen}
+});
+
 
 export default class GalleryScreen extends React.Component{
+
+
 
     static navigationOptions = (props) => ({
         title:'Gallery',
@@ -60,9 +72,8 @@ render(){
               <TouchableOpacity
                 key = { item.id }
                 style = {{ width: itemSize, height: itemSize }}
-                onPress = { () => {
-                  console.log("OnPress was triggered");
-                }}>
+                onPress={() => navigate('ChildScreen', { name: 'Slide Show' })}
+                >
                 <Image
                   resizeMode = "cover"
                   style = {{ flex: 1 }}
