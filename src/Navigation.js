@@ -34,6 +34,7 @@ const TabNavigationOptions = (props) => ({
 
 const StackNavigationOptions = (props) => ({
     headerStyle:{backgroundColor:'#4d3241'},
+    
     headerTitleStyle:{color:'white'},
     headerTintColor:'white',
     headerBackTitle:null,
