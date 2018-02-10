@@ -15,7 +15,7 @@ export default class GalleryScreen extends React.Component{
       super(props);
       this.state =  {
         items: [],
-
+        refreshing: false,
         }}
 
 
@@ -34,22 +34,23 @@ fetchData = async() =>{
           this.setState({ items });
 
       };
-    componentDidMount(){
-          		this.fetchData();
+componentDidMount(){
+        this.fetchData();
           }
 render(){
-      return(
-        <View style={styles.container}>
+    return(
+      <View style={styles.container}>
         <PhotoGrid
+
           data = { this.state.items }
           itemsPerRow = { 3 }
           itemMargin = { 1 }
           renderItem = { this.renderItem }
-    RefreshControl={
-      <RefreshControl
-        refreshing = {this.state.refreshing}
-        onRefresh={this._onRefresh.bind(this)}
-        />
+          RefreshControl={
+            <RefreshControl
+              refreshing = {this.state.refreshing}
+              onRefresh={this._onRefresh.bind(this)}
+              />
             }
         />
       </View>
