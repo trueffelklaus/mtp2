@@ -10,11 +10,13 @@ import ChatScreen from './ChatScreen'
 import LoginScreen from './LoginScreen'
 import SettingScreen from './SettingScreen'
 import UserProfileScreen from './UserProfileScreen'
+import GalleryScreen from './GalleryScreen'
 
 //Tab
 const Tab = TabNavigator({
     friendslist:{screen:FriendsListScreen},
-    chatlist:{screen:ChatListScreen}
+    chatlist:{screen:ChatListScreen},
+    gallery:{screen:GalleryScreen}
 },{
     tabBarOptions:{
         activeTintColor:'#4d3241',
