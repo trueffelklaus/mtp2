@@ -12,5 +12,4 @@ export default class LoginScreen extends React.Component{
             </View>
         )
     }
-
 }

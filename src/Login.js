@@ -21,7 +21,6 @@ import {
   Icon,
   Right
 } from "native-base";
-import Styles from "./Styles";
 
 export default class Login extends Component {
   render() {
@@ -35,7 +34,7 @@ export default class Login extends Component {
           </Body>
         </Header>
         <Content style={styles.content}>
-          <Image style={styles.image} source={require("../res/logo.png")} />
+          <Image style={styles.image} source={require("../res/Logo1.png")} />
           <TextInput
             placeholder="E-Mail"
             placeholderTextColor="rgba(255,255,255,0.7)"
@@ -46,7 +45,7 @@ export default class Login extends Component {
             placeholderTextColor="rgba(255,255,255,0.7)"
             style={styles.input}
           />
-          <TouchableOpacity
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('login')}
             style={styles.buttonContainer}
           >
             <Text style={styles.buttonText}>LOGIN</Text>
@@ -72,19 +71,19 @@ const styles = StyleSheet.create({
     margin: 10
   },
   buttonContainer: {
-    backgroundColor: '#a09f01',
+    backgroundColor: '#dedc00',
     margin: 10,
     padding: 15
   },
   buttonText: {
     textAlign: 'center',
-    color: '#FFFFFF',
+    color: '#000000',
     fontWeight: '800'
   },
   content: {
-    backgroundColor: '#373737'
+    backgroundColor: '#000000'
   },
   header: {
-    backgroundColor: '#4f4e4e'
+    backgroundColor: '#4f4e4e',
   }
 });

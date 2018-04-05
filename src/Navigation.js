@@ -7,7 +7,7 @@ import getSlideFromRightTransition from 'react-navigation-slide-from-right-trans
 import FriendsListScreen from './FriendListScreen'
 import ChatListScreen from './ChatListScreen'
 import ChatScreen from './ChatScreen'
-import LoginScreen from './LoginScreen'
+import Login from './Login'
 import SettingScreen from './SettingScreen'
 import UserProfileScreen from './UserProfileScreen'
 import GalleryScreen from './GalleryScreen'
@@ -20,7 +20,7 @@ const Tab = TabNavigator({
 },{
     tabBarOptions:{
         activeTintColor:'#4d3241',
-        style:{backgroundColor:Platform.select({ios:'white', android:'#4d3241'}), borderTopColor: 'transparent', borderTopWidth: 0, elevation: 0},
+        style:{backgroundColor:Platform.select({ios:'white', android:'#dedc00'}), borderTopColor: 'transparent', borderTopWidth: 0, elevation: 0},
         labelStyle:{color:Platform.select({ios:null, android:'#fff'})},
         indicatorStyle:{backgroundColor:'#fff'},
     }
@@ -28,12 +28,12 @@ const Tab = TabNavigator({
 
 const TabNavigationOptions = (props) => ({
     title:'Sample App',
-    headerStyle:{backgroundColor:'#4d3241', borderBottomColor: 'transparent', borderBottomWidth: 0, elevation: 0},
+    headerStyle:{backgroundColor:'#dedc00', borderBottomColor: 'transparent', borderBottomWidth: 0, elevation: 0},
     headerLeft:<DrawerOpenButton drawerNavigation={props.screenProps.drawerNavigation}/>
 })
 
 const StackNavigationOptions = (props) => ({
-    headerStyle:{backgroundColor:'#4d3241'},
+    headerStyle:{backgroundColor:'#dedc00'},
     headerTitleStyle:{color:'white'},
     headerTintColor:'white',
     headerBackTitle:null,
@@ -72,7 +72,7 @@ const Drawer = DrawerNavigator({
 
 //Modal Stack (root)
 const ModalStack = StackNavigator({
-    logout:{screen:LoginScreen},
+    logout:{screen:Login},
     login:{screen:(props) => <Drawer screenProps={{modalNavigation:props.navigation}}/>},
     userprofile:{screen:UserProfileScreen}
 },{
